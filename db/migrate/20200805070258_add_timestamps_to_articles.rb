@@ -4,6 +4,3 @@ class AddTimestampsToArticles < ActiveRecord::Migration[6.0]
     add_column :articles, :updated_at, :datetime
   end
 end
-
-chars = 'abc'
-ch

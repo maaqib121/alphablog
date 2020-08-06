@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: [:edit, :update, :show, :destory]
+  before_action :set_article, only: [:edit, :update, :show, :destroy]
 
   def show
   end
@@ -21,7 +21,6 @@ class ArticlesController < ApplicationController
       flash[:notice] = "Article successfully created"
       redirect_to @article
     else
-      flash[:error] = "Something went wrong"
       render "new"
     end
   end
@@ -31,7 +30,6 @@ class ArticlesController < ApplicationController
       flash[:notice] = "Article was successfully updated"
       redirect_to @article
     else
-      flash[:error] = "Something went wrong"
       render "edit"
     end
   end
