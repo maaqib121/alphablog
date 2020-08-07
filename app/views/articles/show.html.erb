@@ -10,7 +10,7 @@
         <div class="card-body">
           <h5 class="card-title"><%= link_to @article.title, article_path(@article), class: "text-success" %></h5>
           <div class="card-text text-left"><%= simple_format(@article.description) %></div>
-          <% if logged_in? && (current_user.admin? || article.user == current_user) %>
+          <% if (logged_in? and @article.user == current_user) or current_user.admin? %>
             <%= link_to "Edit", edit_article_path(@article), class: "btn btn-outline-primary" %>
             <%= link_to "Delete", article_path(@article),
                    method: :delete,

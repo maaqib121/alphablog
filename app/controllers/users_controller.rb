@@ -33,7 +33,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      flash[:success] = "Your profile is successfully updated"
+      flash[:notice] = "Your profile is successfully updated"
       redirect_to @user
     else
       render "edit"
