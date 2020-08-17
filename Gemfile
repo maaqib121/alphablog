@@ -56,3 +56,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'hirb'
 
 gem 'will_paginate', '~> 3.1.7'
+
+gem 'fast_jsonapi'
+
+gem 'rack-cors'
+
+gem 'jwt'
