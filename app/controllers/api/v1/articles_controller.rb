@@ -1,6 +1,8 @@
 module Api
   module V1
     class ArticlesController < ApiController
+      before_action :authorized, only: [:create]
+
       def index
         @articles = Article.all
         render json: ArticleSerializer.new(@articles).serializable_hash
@@ -8,7 +10,7 @@ module Api
 
       def create
         @article = Article.new(article_params)
-        @article.user = User.first()
+        @article.user = @user
         if @article.save
           render json: @article, status: :created
         else
