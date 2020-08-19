@@ -11,7 +11,6 @@ module Api
       end
 
       def decoded_token
-        byebug
         if auth_header
           token = auth_header
           # header: { 'Authorization': 'Bearer <token>' }
