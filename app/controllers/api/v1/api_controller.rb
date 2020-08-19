@@ -11,8 +11,9 @@ module Api
       end
 
       def decoded_token
+        byebug
         if auth_header
-          token = auth_header.split(" ")[1]
+          token = auth_header
           # header: { 'Authorization': 'Bearer <token>' }
           begin
             JWT.decode(token, "s3cr3t", true, algorithm: "HS256")
