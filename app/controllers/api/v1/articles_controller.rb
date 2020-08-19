@@ -18,6 +18,11 @@ module Api
         end
       end
 
+      def show
+        @article = Article.find(params[:id])
+        render json: ArticleSerializer.new(@article).serializable_hash
+      end
+
       private
 
       def article_params
